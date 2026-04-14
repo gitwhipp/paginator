@@ -1,0 +1,470 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #eee;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    border-bottom: 1px solid #444;
+}
+.page-header {
+    padding: 8px 10px;
+    font-size: 13px;
+    background: #151515;
+    border-bottom: 1px solid #2a2a2a;
+}
+.sort-bar {
+    padding: 6px 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: #161616;
+    border-bottom: 1px solid #333;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.toggle-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.upload-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000a;
+    z-index: 9999;
+}
+
+.upload-modal-panel {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.upload-modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+.upload-modal.is-open {
+    display: block;
+}
+#toast.is-visible {
+    display: block;
+}
+.empty-message {
+    opacity: .6;
+}
+
+.file-card {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.file-preview-video {
+    max-width: 320px;
+    max-height: 240px;
+    display: block;
+    margin: 0 auto 12px auto;
+}
+
+.file-preview-generic {
+    cursor: default;
+}
+
+.file-preview-clickable {
+    cursor: pointer;
+}
+
+.file-preview-icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.file-preview-label {
+    font-size: 12px;
+    opacity: .7;
+}
+
+.file-preview-audio {
+    display: block;
+    margin: 0 auto 12px auto;
+}
+
+.file-name {
+    font-size: 12px;
+    opacity: .8;
+    cursor: default;
+}
+
+.file-name-editable {
+    cursor: pointer;
+}
+
+.file-rename-input {
+    width: 90%;
+}
+
+.file-delete-button {
+    margin-left: 6px;
+    font-size: 12px;
+}
+.upload-list {
+    max-height: 300px;
+    overflow: auto;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.upload-summary {
+    margin-top: 8px;
+    font-size: 12px;
+}
+#topControls,
+#bottomControls {
+    display: none;
+}
+#sortBar label,
+#sortBar select {
+    font-size: 14px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap;
+}
+
+.toolbar input[type="text"] {
+    background: #0f0f0f;
+    color: #eee;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 6px 8px;
+    min-width: 180px;
+    height: 34px;
+    box-sizing: border-box;
+}
+
+.toolbar button,
+.toolbar label.file-btn {
+    background: #2e2e2e;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    height: 34px;
+    box-sizing: border-box;
+}
+
+.toolbar button:hover,
+.file-btn:hover {
+    background: #444;
+}
+
+.file-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.file-btn input {
+    display: none;
+}
+
+.status-badge {
+    font-size: 14px;
+    opacity: 1;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#directoryList {
+    padding: 10px;
+}
+
+.directory-item {
+    padding: 8px;
+    cursor: pointer;
+    background: #333;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    transition: background .2s;
+}
+
+.directory-item:hover {
+    background: #555;
+}
+
+#backButton {
+    margin: 10px;
+    padding: 6px 12px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+#imageContainer img {
+    height: auto;
+    margin-bottom: 12px;
+    transition: all .3s ease;
+}
+
+img.size-small {
+    max-width: 140px;
+}
+
+img.size-medium {
+    max-width: 320px;
+}
+
+img.size-large {
+    max-width: 100%;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.pagination-controls button {
+    padding: 4px 10px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.pagination-controls button:hover {
+    background: #555;
+}
+.loading-message {
+    opacity: .7;
+    padding: 18px 10px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.directory-controls {
+    float: right;
+}
+.single-preview-image,
+.single-preview-video {
+    max-width: 100vw;
+    width: 100%;
+    height: auto;
+}
+
+.single-preview-audio {
+    width: 100%;
+}
+
+.single-preview-pdf {
+    width: 100%;
+    height: 80vh;
+    border: none;
+}
+
+.single-preview-fallback-text {
+    margin-bottom: 12px;
+}
+
+.single-preview-link {
+    color: #9cf;
+}
+#pageNumbersTop button.is-active,
+#pageNumbersBottom button.is-active {
+    background: #666;
+}
+.directory-drag-handle {
+    opacity: 0.4;
+    margin-right: 8px;
+    cursor: grab;
+}
+.directory-controls {
+    float: right;
+}
+#toast {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+    background: #222;
+    color: #eee;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    display: none;
+    z-index: 9999;
+}
+
+#sortBar select {
+    height: auto;
+    line-height: 1.2;
+    padding: 2px 6px;
+}
+
+#pageNumbersTop button,
+#pageNumbersBottom button {
+    margin: 0 6px;
+}
+.is-hidden {
+    display: none;
+}
+@media (max-width:520px) {
+    .toolbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .toolbar input[type="text"] {
+        min-width: 120px;
+        flex: 1;
+    }
+
+    .toolbar input {
+        width: auto;
+        flex: 1;
+    }
+
+    .toolbar button,
+    .file-btn {
+        width: auto;
+    }
+
+    .right {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #whereStatus {
+        order: 3;
+        margin-top: 4px;
+    }
+
+    .toolbar input,
+    .toolbar button,
+    .file-btn {
+        margin: 0;
+    }
+
+    img.size-small {
+        max-width: 100px;
+    }
+
+    img.size-medium {
+        max-width: 190px;
+    }
+
+    img.size-large {
+        max-width: 100%;
+    }
+}
+.login-modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+}
+.login-modal.is-hidden{
+    display:none;
+}
+.login-modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+}
+.login-modal-panel{
+    position:relative;
+    width:min(100%,420px);
+    max-height:min(90vh,700px);
+    overflow:auto;
+    background:#111;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+.login-modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 16px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+.login-modal-body{
+    padding:16px;
+}
+.login-password-row{
+    display:flex;
+    gap:8px;
+    align-items:stretch;
+    margin-top:8px;
+}
+.login-password-row input{
+    flex:1;
+    min-width:0;
+}
+.login-modal-actions{
+    margin-top:14px;
+    display:flex;
+    justify-content:flex-end;
+}
+@media (max-width: 640px){
+    .login-modal{
+        align-items:flex-end;
+        padding:10px;
+    }
+    .login-modal-panel{
+        width:100%;
+        border-radius:16px 16px 0 0;
+        max-height:85vh;
+    }
+}
