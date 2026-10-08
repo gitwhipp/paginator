@@ -654,6 +654,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             wrap.appendChild(nameEl);
+          
+            const buttonRow = document.createElement('div');
+            buttonRow.className = 'file-button-row';
+
+            const downloadBtn = document.createElement('a');
+            downloadBtn.textContent = 'Download ⬇';
+            downloadBtn.href = fileUrl;
+            downloadBtn.download = fileName;
+            downloadBtn.title = 'Download';
+            downloadBtn.className = 'file-download-button';
+            buttonRow.appendChild(downloadBtn);
 
             if (token) {
                 const delBtn = document.createElement('button');
@@ -666,7 +677,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     const res = await authJson(
                         'assets/api/deleteFile.php',
-                        'POST', {
+                        'POST',
+                        {
                             dir: currentDir || '',
                             file: fileName
                         },
@@ -681,8 +693,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                 };
 
-                wrap.appendChild(delBtn);
+                buttonRow.appendChild(delBtn);
             }
+
+            wrap.appendChild(buttonRow);
+
 
             imageContainer.appendChild(wrap);
         });
